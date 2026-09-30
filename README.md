@@ -56,29 +56,28 @@ NORMAL / PNEUMONIA
 ## Results
 
 
-| Model | Test Accuracy |
+ Model                Test Accuracy 
+-------------------------------------
 
-|---|---:|
+Basic CNN                    70.83% 
 
-| Basic CNN | 70.83% |
+Class-Weighted CNN           74.52% 
 
-| Class-Weighted CNN | 74.52% |
+Improved CNN                 82.37%
 
-| Improved CNN | 82.37% |
-
-| MobileNetV3Small | 87.50% |
+MobileNetV3Small             87.50% 
 
 
 ## Final Model Metrics
 
 
-| Class | Precision | Recall | F1-score |
+Class    Precision    Recall    F1-score 
 
-|---|---:|---:|---:|
+--------------------------------------------
 
-| NORMAL | 0.93 | 0.72 | 0.81 |
+NORMAL        0.93      0.72        0.81 
 
-| PNEUMONIA | 0.85 | 0.97 | 0.91 |
+PNEUMONIA     0.85      0.97        0.91 
 
 
 **Test Accuracy: 87.50%**
