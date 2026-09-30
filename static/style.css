@@ -129,3 +129,19 @@ button:hover {
     color: #555;
     font-size: 14px;
 }
+.reset-button {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #1976d2;
+    color: #1976d2;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.reset-button:hover {
+    background: #eef6ff;
+}
