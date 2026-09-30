@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Chest X-ray Classifier</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AI-Based Chest X-ray Classification</h1>
+
+    <p class="subtitle">
+        Deep Learning Based NORMAL / PNEUMONIA Classification
+    </p>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <div class="upload-box">
+
+            <label for="xray">
+                📁 Choose Chest X-ray
+            </label>
+
+            <input
+                type="file"
+                id="xray"
+                name="xray"
+                accept=".jpg,.jpeg,.png"
+                required
+            >
+
+            <p>Supported formats: JPG, JPEG, PNG</p>
+
+        </div>
+
+        <button type="submit">
+            🔍 Predict
+        </button>
+
+    </form>
+
+    {% if prediction %}
+
+    <div class="result-card">
+
+        <h2>Prediction</h2>
+
+        <div class="prediction">
+            {{ prediction }}
+        </div>
+
+        <p class="confidence">
+            Model Confidence:
+            <strong>{{ "%.2f"|format(confidence) }}%</strong>
+        </p>
+
+        <div class="progress">
+            <div class="progress-bar"
+                 style="width: {{ confidence }}%;">
+            </div>
+        </div>
+
+{% if filename %}
+
+<p class="filename">
+    Selected file: <strong>{{ filename }}</strong>
+</p>
+
+<img
+    src="{{ url_for('static', filename='uploads/' + filename) }}"
+    class="xray-image"
+    alt="Uploaded X-ray"
+>
+
+{% endif %}
+
+    </div>
+
+    {% endif %}
+
+    <p class="warning">
+        Educational/research prototype only.
+        Not a medical diagnostic tool.
+    </p>
+
+</div>
+
+</body>
+</html>

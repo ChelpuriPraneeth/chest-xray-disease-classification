@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+
+.ipynb_checkpoints/
+
+uploads/
+
+archive (4)/
+archive (4).zip
